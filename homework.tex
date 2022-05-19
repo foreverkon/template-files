@@ -1,0 +1,51 @@
+\documentclass{article}
+
+\usepackage[margin=1in]{geometry}
+
+\usepackage{siunitx}
+\sisetup{
+	separate-uncertainty = true,    % 不确定度样式
+	inter-unit-product = \ensuremath{{}\cdot{}}     % 单位之间用·连接
+}
+
+\usepackage{amsmath, amsthm, graphicx}
+\usepackage[libertine]{newtxmath}
+\usepackage[shortlabels]{enumitem}
+
+\usepackage{xeCJK}
+\setmainfont{Times New Roman}
+\setmonofont{Courier New}
+\setCJKmainfont{Noto Serif CJK SC}
+\setCJKmonofont{Noto Sans Mono CJK SC}
+\setCJKsansfont{Noto Sans CJK SC}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=blue,
+}
+
+\usepackage{color, mdframed}
+\definecolor{shadecolor}{RGB}{241, 241, 255}
+\newenvironment{problem}[2][Problem]
+    { \begin{mdframed}[backgroundcolor=shadecolor]\textbf{#1 #2}\newline}
+    { \end{mdframed}}
+\newenvironment{solution}{\textbf{Solution}\newline\hphantom{aa}}{\vspace{1mm}}
+
+\usepackage{autofancyhdr}
+\pagestyle{fancy}
+\lhead{ }
+\rhead{ }
+\chead{ }
+
+\begin{document}
+    \begin{problem}{1}
+
+    \end{problem}
+    \begin{solution}
+
+    \end{solution}
+
+\end{document}
