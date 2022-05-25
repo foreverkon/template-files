@@ -1,0 +1,57 @@
+\documentclass[device=normal, chinesefont=nofont, math=newtx]{elegantnote}
+
+\setmainfont{Times New Roman}
+\setmonofont{Courier New}
+\setCJKmainfont{Noto Serif CJK SC}[BoldFont=Noto Serif CJK SC Bold]
+\setCJKmonofont{Noto Sans Mono CJK SC}[BoldFont=Noto Sans Mono CJK SC Medium]
+\setCJKsansfont{Noto Sans CJK SC}[BoldFont=Noto Sans CJK SC Medium]
+
+\newCJKfontfamily\zhsong{Noto Serif CJK SC}[BoldFont=Noto Serif CJK SC Bold]
+\newCJKfontfamily\zhhei{Noto Sans CJK SC}[BoldFont=Noto Sans CJK SC Medium]
+\newCJKfontfamily\zhkai[BoldFont={FZHei -B01}]{FZKai -Z03}
+\newCJKfontfamily\zhfs[BoldFont={FZHei -B01}]{FZFangSong -Z02}
+
+
+\numberwithin{equation}{section}
+
+\titleformat{\section}{\centering\zhhei\bfseries\LARGE\color{ecolor}}{\textbf{Chapter \arabic{section}}}{1em}{}[]
+
+\usepackage{titletoc}
+\titlecontents{section}[2.5em]{\bfseries\zhhei\Large\color{ecolor}}
+{\contentslabel{1.3em}}{}
+{\titlerule*[1pc]{}\contentspage}
+
+\titlecontents{subsection}[3.8em]{\bfseries\color{ecolor}}
+{\contentslabel{2.3em}}{}
+{\titlerule*[0.8pc]{.}\contentspage}
+
+\titlecontents{subsubsection}[4.8em]{\bfseries\color{ecolor}}
+{\contentslabel{2.8em}}{}
+{\titlerule*[0.8pc]{.}\contentspage}
+
+
+
+\usepackage{cleveref}
+\crefname{figure}{图}{图}
+\crefname{table}{表}{表}
+\crefname{equation}{式}{式}
+
+
+\title{}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\setcounter{page}{1}
+\pagenumbering{Roman}
+\tableofcontents
+\newpage
+
+\setcounter{page}{1}
+\pagenumbering{arabic}
+
+\end{document}
