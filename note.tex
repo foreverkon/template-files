@@ -1,33 +1,47 @@
-\documentclass[device=normal, chinesefont=nofont, math=newtx]{elegantnote}
+\documentclass[device=normal, chinesefont=nofont]{elegantnote}
+
+\geometry{
+    right=2in,
+    a4paper,
+    marginparwidth=1.8in,
+}
 
 \setmainfont{Times New Roman}
-\setmonofont{Courier New}
+\setsansfont{Comic Sans MS}
+\setmonofont{Hack}
 \setCJKmainfont{Noto Serif CJK SC}[BoldFont=Noto Serif CJK SC Bold]
 \setCJKmonofont{Noto Sans Mono CJK SC}[BoldFont=Noto Sans Mono CJK SC Medium]
 \setCJKsansfont{Noto Sans CJK SC}[BoldFont=Noto Sans CJK SC Medium]
 
 \newCJKfontfamily\zhsong{Noto Serif CJK SC}[BoldFont=Noto Serif CJK SC Bold]
 \newCJKfontfamily\zhhei{Noto Sans CJK SC}[BoldFont=Noto Sans CJK SC Medium]
-\newCJKfontfamily\zhkai[BoldFont={FZHei -B01}]{FZKai -Z03}
-\newCJKfontfamily\zhfs[BoldFont={FZHei -B01}]{FZFangSong -Z02}
+\newCJKfontfamily\zhkai[BoldFont={FZHei-B01}]{FZKai-Z03}
+\newCJKfontfamily\zhfs[BoldFont={FZHei-B01}]{FZFangSong-Z02}
 
 
+% utopia  adobe-utopia  garamond  urw-garamond  charter  bitstream-charter
+\usepackage[utopia]{mathdesign}
+
+% 章节编号为前缀
 \numberwithin{equation}{section}
+\numberwithin{table}{section}
+\numberwithin{figure}{section}
 
 \titleformat{\section}{\centering\zhhei\bfseries\LARGE\color{ecolor}}{\textbf{Chapter \arabic{section}}}{1em}{}[]
 
 \usepackage{titletoc}
+\setcounter{tocdepth}{2}
 \titlecontents{section}[2.5em]{\bfseries\zhhei\Large\color{ecolor}}
 {\contentslabel{1.3em}}{}
 {\titlerule*[1pc]{}\contentspage}
 
-\titlecontents{subsection}[3.8em]{\bfseries\color{ecolor}}
+\titlecontents{subsection}[3.8em]{\bfseries\zhhei\color{ecolor}}
 {\contentslabel{2.3em}}{}
 {\titlerule*[0.8pc]{.}\contentspage}
 
-\titlecontents{subsubsection}[4.8em]{\bfseries\color{ecolor}}
-{\contentslabel{2.8em}}{}
-{\titlerule*[0.8pc]{.}\contentspage}
+% \titlecontents{subsubsection}[4.8em]{\bfseries\zhhei\color{ecolor}}
+% {\contentslabel{2.8em}}{}
+% {\titlerule*[0.8pc]{.}\contentspage}
 
 
 
@@ -36,21 +50,30 @@
 \crefname{table}{表}{表}
 \crefname{equation}{式}{式}
 
+\usepackage{snotez}
+\setsidenotes{
+    perpage=true,
+    marginnote=true,
+    text-format+=\zhkai
+}
 
 \title{}
 \author{}
 \date{}
 
 \begin{document}
+%% 封面不编号
 \maketitle
 \thispagestyle{empty}
 \newpage
 
+%% 目录 希腊字母 编号
 \setcounter{page}{1}
 \pagenumbering{Roman}
 \tableofcontents
 \newpage
 
+%% 正文 数字 编号
 \setcounter{page}{1}
 \pagenumbering{arabic}
 
