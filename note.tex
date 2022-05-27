@@ -1,11 +1,6 @@
 \documentclass[device=normal, chinesefont=nofont]{elegantnote}
 
-\geometry{
-    right=2in,
-    a4paper,
-    marginparwidth=1.8in,
-}
-
+%% 字体设置
 \setmainfont{Times New Roman}
 \setsansfont{Comic Sans MS}
 \setmonofont{Hack}
@@ -19,6 +14,7 @@
 \newCJKfontfamily\zhfs[BoldFont={FZHei-B01}]{FZFangSong-Z02}
 
 
+%% 数学字体
 % utopia  adobe-utopia  garamond  urw-garamond  charter  bitstream-charter
 \usepackage[utopia]{mathdesign}
 
@@ -27,29 +23,29 @@
 \numberwithin{table}{section}
 \numberwithin{figure}{section}
 
+%% 将 section 转为 chapter 样式
 \titleformat{\section}{\centering\zhhei\bfseries\LARGE\color{ecolor}}{\textbf{Chapter \arabic{section}}}{1em}{}[]
 
+%% 目录样式
 \usepackage{titletoc}
 \setcounter{tocdepth}{2}
 \titlecontents{section}[2.5em]{\bfseries\zhhei\Large\color{ecolor}}
 {\contentslabel{1.3em}}{}
 {\titlerule*[1pc]{}\contentspage}
-
 \titlecontents{subsection}[3.8em]{\bfseries\zhhei\color{ecolor}}
 {\contentslabel{2.3em}}{}
 {\titlerule*[0.8pc]{.}\contentspage}
-
 % \titlecontents{subsubsection}[4.8em]{\bfseries\zhhei\color{ecolor}}
 % {\contentslabel{2.8em}}{}
 % {\titlerule*[0.8pc]{.}\contentspage}
 
-
-
+%% 智能引用
 \usepackage{cleveref}
 \crefname{figure}{图}{图}
 \crefname{table}{表}{表}
 \crefname{equation}{式}{式}
 
+%% 边注样式
 \usepackage{snotez}
 \setsidenotes{
     perpage=true,
@@ -57,9 +53,19 @@
     text-format+=\zhkai
 }
 
-\title{}
-\author{}
-\date{}
+%% 自定义命令
+\def\emph#1{{\zhhei\bfseries\color{ecolor} #1}} % 强调 emphasize
+\def\chap#1{\section{#1}}
+\def\sec#1{\subsection{#1}}
+\def\subsec#1{\subsubsection{#1}}
+
+%% 引入的正文
+\includeonly{}
+
+%% 标题
+\title{\emph{   }}
+\author{  }
+\date{  }
 
 \begin{document}
 %% 封面不编号
@@ -67,14 +73,18 @@
 \thispagestyle{empty}
 \newpage
 
-%% 目录 希腊字母 编号
+%% 目录编号 罗马数字
 \setcounter{page}{1}
 \pagenumbering{Roman}
 \tableofcontents
 \newpage
 
-%% 正文 数字 编号
+%% 正文编号 数字
 \setcounter{page}{1}
 \pagenumbering{arabic}
+
+
+%% 正文
+\include{}
 
 \end{document}
