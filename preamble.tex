@@ -2,16 +2,19 @@
 
 %%%%%%%%%%%% 符号相关 %%%%%%%%%%%%
 \usepackage{siunitx}                % 单位宏包
-\usepackage{physics}                % 物理符号
+% \usepackage{physics}                % 物理符号
 \usepackage{amsmath, amssymb}       % 数学宏包
-\usepackage[libertine]{newtxmath}   % 数学字体
-\usepackage[version=4]{mhchem}      % 化学符号
-\usepackage{bm}                     % 数学加粗
+%% 数学字体
+% \usepackage[libertine]{newtxmath}
+% utopia  adobe-utopia  garamond  urw-garamond  charter  bitstream-charter
+\usepackage[garamond]{mathdesign}
+% \usepackage[version=4]{mhchem}      % 化学符号
+% \usepackage{bm}                     % 数学加粗
 %%%%% 常用核素定义
-\newcommand{\Co}{\ce{^{60}Co}}
-\newcommand{\Cs}{\ce{^{137}Cs}}
-\newcommand{\Am}{\ce{^{241}Am}}
-\newcommand{\Na}{\ce{^{24}Na}}
+% \newcommand{\Co}{\ce{^{60}Co}}
+% \newcommand{\Cs}{\ce{^{137}Cs}}
+% \newcommand{\Am}{\ce{^{241}Am}}
+% \newcommand{\Na}{\ce{^{24}Na}}
 %%%%% 单位样式
 \sisetup{
 	separate-uncertainty = true,    % 不确定度样式
@@ -22,8 +25,8 @@
 %%%%%%%%%%%% 样式相关 %%%%%%%%%%%%
 \usepackage{float}          % 浮动体样式宏包
 \usepackage{booktabs}       % 三线表宏包
-\usepackage{multirow}       % 复杂表格多行宏包
-\usepackage{color}          % 字体颜色宏包
+% \usepackage{multirow}       % 复杂表格多行宏包
+% \usepackage{color}          % 字体颜色宏包
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%  标题样式宏包 %%%%%%%%%%%
@@ -38,13 +41,18 @@
 
 %%%%%%%%%%%% 中文设置 %%%%%%%%%%%%
 \usepackage[fontset=none]{ctex}
-\usepackage{fontspec}   % 字体设置宏包
+% \usepackage{fontspec}   % 字体设置宏包
 \usepackage{xeCJK}
 \setmainfont{Times New Roman}
 \setmonofont{Courier New}
-\setCJKmainfont{Noto Serif CJK SC}[BoldFont=Noto Sans CJK SC Medium]
-\setCJKmonofont{Noto Sans Mono CJK SC}
-\setCJKsansfont{Noto Sans CJK SC}
+\setCJKmainfont{Noto Serif CJK SC}[BoldFont=Noto Serif CJK SC Bold]
+\setCJKmonofont{Noto Sans Mono CJK SC}[BoldFont=Noto Sans Mono CJK SC Medium]
+\setCJKsansfont{Noto Sans CJK SC}[BoldFont=Noto Sans CJK SC Medium]
+
+\newCJKfontfamily\zhsong{Noto Serif CJK SC}[BoldFont=Noto Serif CJK SC Bold]
+\newCJKfontfamily\zhhei{Noto Sans CJK SC}[BoldFont=Noto Sans CJK SC Medium]
+% \newCJKfontfamily\zhkai[BoldFont={FZHei-B01}]{FZKai-Z03}
+% \newCJKfontfamily\zhfs[BoldFont={FZHei-B01}]{FZFangSong-Z02}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%% 图片处理相关 %%%%%%%%%%%
@@ -68,14 +76,27 @@
 % \usepackage{tikz}           % 绘图包
 % \usepackage{subfiles}       % 子文件
 % \usepackage{chngcntr}		  % 标签编号
-% \counterwithin{equation}{part}
+% \numberwithin{equation}{section}      % 章节编号为前缀
+% \numberwithin{table}{section}
+% \numberwithin{figure}{section}
+% \counterwithin{equation}{part}        % 自定义编号
+% \renewcommand{\thetable}{\arabic{part}.\arabic{table}}
+% \usepackage{snotez}                   % 边注
+% \setsidenotes{
+%     perpage=true,
+%     marginnote=true,
+%     text-format+=\zhkai
+% }
+% \usepackage{titletoc}                   % 目录样式
+% \setcounter{tocdepth}{2}
+% \titlecontents{section}[2.5em]{\bfseries\zhhei\Large\color{ecolor}}
+% {\contentslabel{1.3em}}{}
+% {\titlerule*[1pc]{}\contentspage}
+% \titlecontents{subsection}[3.8em]{\bfseries\zhhei\color{ecolor}}
+% {\contentslabel{2.3em}}{}
+% {\titlerule*[0.8pc]{.}\contentspage}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%% 添加input文件夹%%%%%%%%%%%%%%
-% \makeatletter
-% \providecommand*\input@path{}
-% \newcommand\addinputpath[1]{
-%   \expandafter\def\expandafter\input@path
-%   \expandafter{\input@path{#1}}}
-% \addinputpath{parts/}
-% \makeatother
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{{\bfseries\zhhei }}
+\author{}
+\date{}
