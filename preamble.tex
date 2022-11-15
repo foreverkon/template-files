@@ -2,19 +2,12 @@
 
 %%%%%%%%%%%% 符号相关 %%%%%%%%%%%%
 \usepackage{siunitx}                % 单位宏包
-% \usepackage{physics}                % 物理符号
+\usepackage{physics}                % 物理符号
 \usepackage{amsmath, amssymb}       % 数学宏包
-%% 数学字体
-% \usepackage[libertine]{newtxmath}
-% utopia  adobe-utopia  garamond  urw-garamond  charter  bitstream-charter
-\usepackage[garamond]{mathdesign}
 % \usepackage[version=4]{mhchem}      % 化学符号
 % \usepackage{bm}                     % 数学加粗
-%%%%% 常用核素定义
+%%%%% 核素定义
 % \newcommand{\Co}{\ce{^{60}Co}}
-% \newcommand{\Cs}{\ce{^{137}Cs}}
-% \newcommand{\Am}{\ce{^{241}Am}}
-% \newcommand{\Na}{\ce{^{24}Na}}
 %%%%% 单位样式
 \sisetup{
 	separate-uncertainty = true,    % 不确定度样式
@@ -53,6 +46,11 @@
 \newCJKfontfamily\zhhei{Noto Sans CJK SC}[BoldFont=Noto Sans CJK SC Medium]
 % \newCJKfontfamily\zhkai[BoldFont={FZHei-B01}]{FZKai-Z03}
 % \newCJKfontfamily\zhfs[BoldFont={FZHei-B01}]{FZFangSong-Z02}
+
+%% 数学字体
+% \usepackage[libertine]{newtxmath}
+% utopia  adobe-utopia  garamond  urw-garamond  charter  bitstream-charter
+\usepackage[garamond]{mathdesign}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%% 图片处理相关 %%%%%%%%%%%
@@ -76,18 +74,24 @@
 % \usepackage{tikz}           % 绘图包
 % \usepackage{subfiles}       % 子文件
 % \usepackage{chngcntr}		  % 标签编号
-% \numberwithin{equation}{section}      % 章节编号为前缀
+
+%%%%% 编号前缀
+% \numberwithin{equation}{section}
 % \numberwithin{table}{section}
 % \numberwithin{figure}{section}
 % \counterwithin{equation}{part}        % 自定义编号
 % \renewcommand{\thetable}{\arabic{part}.\arabic{table}}
-% \usepackage{snotez}                   % 边注
+
+%%%%% 边注
+% \usepackage{snotez}
 % \setsidenotes{
 %     perpage=true,
 %     marginnote=true,
 %     text-format+=\zhkai
 % }
-% \usepackage{titletoc}                   % 目录样式
+
+%%%%% 目录样式
+% \usepackage{titletoc}
 % \setcounter{tocdepth}{2}
 % \titlecontents{section}[2.5em]{\bfseries\zhhei\Large\color{ecolor}}
 % {\contentslabel{1.3em}}{}
@@ -95,8 +99,17 @@
 % \titlecontents{subsection}[3.8em]{\bfseries\zhhei\color{ecolor}}
 % {\contentslabel{2.3em}}{}
 % {\titlerule*[0.8pc]{.}\contentspage}
+
+%%%% 中文编号
+% \usepackage{zhnumber}
+% \renewcommand\thesection{\zhnum{section}}
+% \renewcommand \thesubsection {\arabic{section}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \title{{\bfseries\zhhei }}
 \author{}
 \date{}
+
+\begin{document}
+\maketitle
+\end{document}
